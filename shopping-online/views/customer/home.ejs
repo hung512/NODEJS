@@ -1,36 +1,284 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dealers &mdash; Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <link href="/css/styles.css" type="text/css" rel="stylesheet" />
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../homeCust/fonts/icomoon/style.css">
 
-<body class="customer">
-  <%- include('./_menu.ejs') %>
-  <%- include('./_inform.ejs') %>
-  <div class="align-center">
-    <h2 class="text-center">NEW PRODUCTS</h2>
-    <%  for (var prod of newprods) { %>
-    <div class="inline">
-      <figure>
-        <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
-        <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-      </figure>
+    <link rel="stylesheet" href="../homeCust/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../homeCust/css/magnific-popup.css">
+    <link rel="stylesheet" href="../homeCust/css/jquery-ui.css">
+    <link rel="stylesheet" href="../homeCust/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../homeCust/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="../homeCust/css/aos.css">
+
+    <link rel="stylesheet" href="../homeCust/css/style.css">
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+    
+
+    <div class="site-navbar bg-white py-2">
+
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>  
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="home" class="js-logo-clone">MadeWell</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li>
+                  <a href="home">HOME</a>
+                </li>
+                
+                <li><a href="listproduct">LAPTOP</a></li>
+                <li><a href="listproduct">SMARTPHONE</a></li>
+                <li><a href="listproduct">ACCESSORIES</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="icons">
+            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+            <a href="mycart" class="icons-btn d-inline-block bag">
+              <span class="icon-shopping-bag"></span>
+              <span class="number">2</span>
+              <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <%  } %>
-  </div>
-  <%  if (hotprods) { %>
-  <div class="align-center">
-    <h2 class="text-center">HOT PRODUCTS</h2>
-    <%  for (var prod of hotprods) { %>
-    <div class="inline">
-      <figure>
-        <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
-        <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-      </figure>
-    </div>
-    <%  } %>
-  </div>
-  <%  } %>
-</body>
 
+    <div class="site-blocks-cover" data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+            <div class="featured-hero-product w-100">
+              <h1 class="mb-2">Madewell</h1>
+              <h4>NEW PRODUCTS</h4>
+              <div class="price mt-3 mb-5"><strong>1,499</strong> <del>$1,999</del></div>
+              <p><a href="#" class="btn btn-outline-primary rounded-0">Shop Now</a> </p>
+            </div>  
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  
+    <div class="products-wrap border-top-0">
+      <div class="container-fluid">
+        <div class="row no-gutters products">
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The Shoe</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <span class="tag">Sale</span>
+              <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>Marc Jacobs Bag</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50 <del>$30.00</del></strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The  Belt</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/mages/product_1.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The Shoe</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <span class="tag">Sale</span>
+              <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>Marc Jacobs Bag</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50 <del>$30.00</del></strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The  Belt</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Collections</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 block-3 products-wrap">
+            <div class="nonloop-block-3 owl-carousel">
+              
+              <div class="product">
+                <a href="#" class="item">
+                  <img src="../homeCust/images/product_1.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>The Shoe</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="product">
+                <a href="#" class="item">
+                  <span class="tag">Sale</span>
+                  <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>Marc Jacobs Bag</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50 <del>$30.00</del></strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="product">
+                <a href="#" class="item">
+                  <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>The  Belt</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="product">
+                <a href="#" class="item">
+                  <img src="../homeCust/images/product_1.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>The Shoe</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="product">
+                <a href="#" class="item">
+                  <span class="tag">Sale</span>
+                  <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>Marc Jacobs Bag</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50 <del>$30.00</del></strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="product">
+                <a href="#" class="item">
+                  <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+                  <div class="item-info">
+                    <h3>The  Belt</h3>
+                    <span class="collection d-block">Summer Collection</span>
+                    <strong class="price">$9.50</strong>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-blocks-cover inner-page py-5"  data-aos="fade">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 ml-auto order-lg-2 align-self-start">
+            <div class="site-block-cover-content">
+            <h2 class="sub-title">#New Summer Collection 2019</h2>
+            <h1>New Denim Coat</h1>
+            
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 align-self-end">
+            <img src="../homeCust/images/model_5.png" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer custom-border-top">
+      
+          
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../homeCust/js/jquery-3.3.1.min.js"></script>
+  <script src="../homeCust/js/jquery-ui.js"></script>
+  <script src="../homeCust/js/popper.min.js"></script>
+  <script src="../homeCust/js/bootstrap.min.js"></script>
+  <script src="../homeCust/js/owl.carousel.min.js"></script>
+  <script src="../homeCust/js/jquery.magnific-popup.min.js"></script>
+  <script src="../homeCust/js/aos.js"></script>
+
+  <script src="../homeCust/js/main.js"></script>
+    
+  </body>
 </html>
