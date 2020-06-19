@@ -228,44 +228,48 @@
                     </div>
                 </div>
             </div>
-            <%  if (order) { %>
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <h2 class="card-header text-center">ORDER DETAIL</h2>
-        <div class="card-body p-0">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="bg-light">
-                <tr class="border-0">
-                  <th class="border-0">No.</th>
-                  <th class="border-0">Prod.ID</th>
-                  <th class="border-0">Prod.name</th>
-                  <th class="border-0">Image</th>
-                  <th class="border-0">Price</th>
-                  <th class="border-0">Quantity</th>
-                  <th class="border-0">Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                <%  for (var [i, item] of order.items.entries()) {  %>
-                <tr class="datatable">
-                  <td><%=(i+1)%></td>
-                  <td><%=item.product._id%></td>
-                  <td><%=item.product.name%></td>
-                  <td><img src="data:image/jpg;base64,<%=item.product.image%>" width="70" height="70" /></td>
-                  <td><%=item.product.price%></td>
-                  <td><%=item.quantity%></td>
-                  <td><%=item.product.price * item.quantity%></td>
-                </tr>
-                <%  } %>
-              </tbody>
-            </table>
-          </div>
+
+          </div>  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-block">
+                    <h1 class="card-title">Order Table</h1>
+                    <h6 class="card-subtitle"><p>Customer</p></h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                  <th>ID</th>
+                                  <th>Creation date</th>
+                                  <th>Cust.name</th>
+                                  <th>Cust.phone</th>
+                                  <th>Total</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+                                </tr>
+                                <%  for (var item of orders) { %>
+                                  <tr class="datatable" onclick="window.location='./listorder?id=<%=item._id%>'">
+                                    <th><%=item._id%></th>
+                                    <td><%=new Date(item.cdate).toLocaleString()%></td>
+                                    <td><%=item.customer.name%></td>
+                                    <td><%=item.customer.phone%></td>
+                                    <td><%=item.total%></td>
+                                    <td><%=item.status%></td>
+                                    <td>
+                                      <%  if (item.status == 'PENDING') {  %>
+                                      <a href="./updatestatus?status=APPROVED&id=<%=item._id%>">APPROVE</a>
+                                      ||
+                                      <a href="./updatestatus?status=CANCELED&id=<%=item._id%>">CANCEL</a>
+                                      <%  } %>
+                                    </td>
+                                  </tr>
+                                  <%  } %>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
-    </div>
-    <%  } %>
-          </div>
         <!-- End PAge Content -->
         <!-- ============================================================== -->
     </div>
