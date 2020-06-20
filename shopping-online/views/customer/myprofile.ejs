@@ -2,20 +2,6 @@
 
 <head>
   <link href="/css/styles.css" type="text/css" rel="stylesheet" />
-    <title>ShopMax — Colorlib e-Commerce Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="../homeCust/fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="../homeCust/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../homeCust/css/magnific-popup.css">
-    <link rel="stylesheet" href="../homeCust/css/jquery-ui.css">
-    <link rel="stylesheet" href="../homeCust/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../homeCust/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../homeCust/css/aos.css">
-    <link rel="stylesheet" href="../homeCust/css/style.css">
 </head>
 
 <body class="customer">
@@ -24,42 +10,32 @@
   <div class="align-center">
     <h2 class="text-center">MY PROFILE</h2>
     <form action="./myprofile" method="POST">
-      <div class="p-3 p-lg-5 border">
-        <div class="form-group row">
-          <div class="col-md-6">
-            <label for="c_fname" class="text-black">Username <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" value="<%=session.customer.username%>" name="txtUsername" readonly>
-          </div>
-          <div class="col-md-6">
-            <label for="c_name" class="text-black">Customer Name<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" value="<%=session.customer.name%>" name="txtName" required>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-md-12">
-            <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" value="<%=session.customer.email%>" name="txtEmail" placeholder="Email address" required>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-md-12">
-            <label for="c_password" class="text-black">Password </label>
-            <input type="text" class="form-control" value="<%=session.customer.password%>" pattern=".{3,}" name="txtPassword">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-md-12">
-            <label for="c_phone" class="text-black">Số điện thoại <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" value="<%=session.customer.phone%>" name="txtPhone" placeholder="Phone number" required>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-lg-12">
-            <input type="submit" class="btn btn-primary btn-lg btn-block" value="UPDATE">
-          </div>
-        </div>
-      </div>
+      <table class="align-center">
+        <tr>
+          <td>Username</td>
+          <td><input type="text" name="txtUsername" value="<%=session.customer.username%>" readonly /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="txtPassword" value="<%=session.customer.password%>" pattern=".{3,}" required /></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" name="txtName" value="<%=session.customer.name%>" required /></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td><input type="tel" name="txtPhone" value="<%=session.customer.phone%>" pattern="0[0-9]{9}" required /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="txtEmail" value="<%=session.customer.email%>" readonly /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="UPDATE" /></td>
+        </tr>
+      </table>
     </form>
   </div>
 </body>
