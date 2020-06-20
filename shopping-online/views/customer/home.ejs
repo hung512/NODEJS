@@ -70,61 +70,100 @@
 
     <div class="site-blocks-cover" data-aos="fade">
       <div class="container">
+
         <div class="row align-items-center">
-          <div class="site-blocks-cover inner-page py-5"  data-aos="fade">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-lg-6 ml-auto order-lg-2 align-self-start">
-                  <div class="site-block-cover-content">
-                  <div class="featured-hero-product w-100">
-                    <h1 class="mb-2">Madewell</h1>
-                    <h4>Thế Giới Công Nghệ</h4>
-                  </div>                    
-                  </div>
-                </div>
-                <div class="col-lg-6 order-1 align-self-end">
-                  <img src="../homeCust/images/dem21.jpg" alt="Image" class="img-fluid">
-                </div>
-              </div>
-            </div>
+          <div class="col-lg-12 text-center">
+            <div class="featured-hero-product w-100">
+              <h1 class="mb-2">Madewell</h1>
+              <h4>NEW PRODUCTS</h4>
+              <div class="price mt-3 mb-5"><strong>1,499</strong> <del>$1,999</del></div>
+              <p><a href="#" class="btn btn-outline-primary rounded-0">Shop Now</a> </p>
+            </div>  
           </div>
         </div>
       </div>
       
     </div>
-    <br/>
 
-    <table class="database" border="1">
-        <%  for (var prod of newprods) { %>
-          <th>
-            <div class="inline">
-              <figure>
-                <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
-                  <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-              </figure>
-            </div>
-          </th>
-        <%  } %>
-
-        <%  if (hotprods) { %>
-          <%  for (var prod of hotprods) { %>
-            <th>
-              <div class="inline">
-                <figure>
-                  <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
-                    <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-                </figure>
+  
+    <div class="products-wrap border-top-0">
+      <div class="container-fluid">
+        <div class="row no-gutters products">
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The Shoe</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
               </div>
-            </th>
-          <%  } %>
-        <%  } %>
-    </table>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <span class="tag">Sale</span>
+              <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>Marc Jacobs Bag</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50 <del>$30.00</del></strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The  Belt</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/mages/product_1.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The Shoe</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <span class="tag">Sale</span>
+              <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>Marc Jacobs Bag</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50 <del>$30.00</del></strong>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-md-6 col-lg-4">
+            <a href="#" class="item">
+              <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
+              <div class="item-info">
+                <h3>The  Belt</h3>
+                <span class="collection d-block">Summer Collection</span>
+                <strong class="price">$9.50</strong>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    
 
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="title-section text-center col-12">
-            <h2 class="text-uppercase">More Products</h2>
+            <h2 class="text-uppercase">Collections</h2>
           </div>
         </div>
         <div class="row">
@@ -133,9 +172,9 @@
               
               <div class="product">
                 <a href="#" class="item">
-                  <img src="../homeCust/images/redm.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_1.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>Red Magic 5G</h3>
+                    <h3>The Shoe</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50</strong>
                   </div>
@@ -145,9 +184,9 @@
               <div class="product">
                 <a href="#" class="item">
                   <span class="tag">Sale</span>
-                  <img src="../homeCust/images/ramkingmax.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>RAM KingMax 8GB</h3>
+                    <h3>Marc Jacobs Bag</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50 <del>$30.00</del></strong>
                   </div>
@@ -156,9 +195,9 @@
 
               <div class="product">
                 <a href="#" class="item">
-                  <img src="../homeCust/images/iPhone XR.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>iPhone XR</h3>
+                    <h3>The  Belt</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50</strong>
                   </div>
@@ -167,9 +206,9 @@
 
               <div class="product">
                 <a href="#" class="item">
-                  <img src="../homeCust/images/Macbook 12.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_1.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>Macbook 12</h3>
+                    <h3>The Shoe</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50</strong>
                   </div>
@@ -179,9 +218,9 @@
               <div class="product">
                 <a href="#" class="item">
                   <span class="tag">Sale</span>
-                  <img src="../homeCust/images/ghegaming.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_2.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>Ghế Gaming Alpha Gamer (Đen;Đỏ)</h3>
+                    <h3>Marc Jacobs Bag</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50 <del>$30.00</del></strong>
                   </div>
@@ -190,9 +229,9 @@
 
               <div class="product">
                 <a href="#" class="item">
-                  <img src="../homeCust/images/asus_rog_strix.jpg" alt="Image" class="img-fluid">
+                  <img src="../homeCust/images/product_3.jpg" alt="Image" class="img-fluid">
                   <div class="item-info">
-                    <h3>Card màn hình ASUS ROG Strix Radeon RX 5700 OC 8GB GDDR6 (ROG-STRIX-RX5700-O8G-GAMING)</h3>
+                    <h3>The  Belt</h3>
                     <span class="collection d-block">Summer Collection</span>
                     <strong class="price">$9.50</strong>
                   </div>

@@ -2,6 +2,18 @@
 
 <head>
   <link href="/css/styles.css" type="text/css" rel="stylesheet" />
+    <title>Dealers — Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../homeCust/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../homeCust/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../homeCust/css/magnific-popup.css">
+    <link rel="stylesheet" href="../homeCust/css/jquery-ui.css">
+    <link rel="stylesheet" href="../homeCust/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../homeCust/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../homeCust/css/aos.css">
+    <link rel="stylesheet" href="../homeCust/css/style.css">
 </head>
 
 <body class="customer">
@@ -10,17 +22,6 @@
   <div class="align-center">
     <h2 class="text-center">ITEM LIST</h2>
     <table class="datatable" border="1">
-      <tr class="datatable">
-        <th>No.</th>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Image</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Amount</th>
-        <th>Action</th>
-      </tr>
       <%  for (var [i, item] of session.mycart.entries()) { %>
       <tr class="datatable">
         <td><%=(i+1)%></td>
@@ -33,14 +34,43 @@
         <td><%=item.product.price * item.quantity%></td>
         <td><a href="./remove2cart?id=<%=item.product._id%>">Remove</a></td>
       </tr>
-      <%  } %>
-      <tr>
-        <td colspan="6"></td>
-        <td>Total</td>
-        <td><%=total%></td>
-        <td><a href="./checkout" onclick="return confirm('ARE YOU SURE?')">CHECKOUT</a></td>
-      </tr>
-    </table>
+      <%  } %>    
+          </table>
+
+      <div class="row mb-5">
+        <form class="col-md-12" method="post">
+          <div class="site-blocks-table">
+          </div>
+        </form>
+      </div>
+
+      <div class="row mb-10">
+        <div class="text-center col-md-10">
+          <span<strong class="text-black">Total:</strong></span> 
+          <td><%=total%></td> 
+        </div>   
+
+      <div class="row-fluid">
+        <div class="col md-5">
+          <div class="row mb-5">            
+            <div class="col-md-10 mb-3  ">
+              <button class="btn btn-primary btn-sm btn-block">
+                <a href="./home" style="color:white">Add more to CART</a>
+              </button>
+            </div>
+            <div class="col-md-10 mb-3">
+              <a class="btn btn-primary btn-lg btn-block" href="./checkout" style="color:white" onclick="return confirm('ARE YOU SURE?')">Proceed To Checkout</a>
+            </div>
+          </div>
+       
+    <div class="row">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
