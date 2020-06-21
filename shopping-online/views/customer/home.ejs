@@ -21,7 +21,6 @@
     
   </head>
   <body>
-  
   <div class="site-wrap">
     
 
@@ -30,7 +29,7 @@
       <div class="search-wrap">
         <div class="container">
           <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="#" method="post">
+          <form action="./search" method="post">
             <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
           </form>  
         </div>
@@ -56,11 +55,18 @@
               </ul>
             </nav>
           </div>
+          <div class="col-lg-offset-4" >
+            <%  if (session.customer) {  %>
+            Hello <b><%=session.customer.name%></b> | <a class="icons-btn logout" href="./logout">Logout</a>
+            <%  } else {  %>
+            <a class="icons-btn Login" href="./login">Login </a> | <a class="icon-btn signup" href="./signup">Sign up</a>
+            <%  } %>
+          </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="mycart" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
+              <span class="number"><%= (session.mycart) ? session.mycart.length : 0 %></span>
               <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
             </a>
           </div>
@@ -102,6 +108,7 @@
         </div>
       </div>
     </div>
+  <div class="container" >
     <table class="database">
         <%  for (var prod of newprods) { %>
           <th>
@@ -113,6 +120,7 @@
             </div>
           </th>
         <%  } %>
+        
 
         <!-- <%  if (hotprods) { %>
           <%  for (var prod of hotprods) { %>
@@ -127,6 +135,7 @@
           <%  } %>
         <%  } %> -->
     </table>
+  </div>
 
     <div class="site-section">
       <div class="container">
