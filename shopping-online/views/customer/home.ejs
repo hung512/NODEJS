@@ -93,11 +93,19 @@
       
     </div>
     <br/>
-
-    <table class="database" border="1">
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Hot Products</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="database">
         <%  for (var prod of newprods) { %>
           <th>
-            <div class="inline">
+            <div class="col-lg-6">
               <figure>
                 <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
                   <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
@@ -106,7 +114,7 @@
           </th>
         <%  } %>
 
-        <%  if (hotprods) { %>
+        <!-- <%  if (hotprods) { %>
           <%  for (var prod of hotprods) { %>
             <th>
               <div class="inline">
@@ -117,7 +125,7 @@
               </div>
             </th>
           <%  } %>
-        <%  } %>
+        <%  } %> -->
     </table>
 
     <div class="site-section">
