@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-  <title>Order Page</title>
+  <title>Product Page</title>
   <!-- Bootstrap Core CSS -->
   <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -76,7 +76,7 @@
             <!-- Logo text --><span>
 
               <!-- Light Logo text -->
-              <a href="./home" style="color: white; font-size: 25;">NodeJs</a>
+              <a href="./home" style="color: white; font-size: 25;">MADEWELL</a>
         </div>
         <div class="navbar-collapse">
           <div class="col-md-12 col-12 align-self-center">
@@ -138,10 +138,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-block">
-              <h1 class="card-title">Order Table</h1>
-              <h6 class="card-subtitle">
-                <p>Customer</p>
-              </h6>
+              <h1 class="card-title text-center">Product Table</h1>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -155,17 +152,26 @@
                     </tr>
 
                     <%  for (var item of prods) {  %>
-                    <tr class="table"
-                      onclick="details('<%=item._id%>', '<%=item.name%>', '<%=item.price%>', '<%=item.category.id%>', '<%=item.image%>')">
-                      <td class="border-0"><%=item._id%></td>
-                      <td class="border-0"><%=item.name%></td>
-                      <td class="border-0"><%=item.price%></td>
-                      <td class="border-0"><%=new Date(item.cdate).toLocaleString()%></td>
-                      <td class="border-0"><%=item.category.name%></td>
-                      <td class="border-0"><img src="data:image/jpg;base64,<%=item.image%>" width="100" height="100" />
-                      </td>
-                    </tr>
-                    <%  } %>
+                      <tr class="datatable" onclick="details('<%=item._id%>', '<%=item.name%>', '<%=item.price%>', '<%=item.category.id%>', '<%=item.image%>')">
+                        <td class="border-0"><%=item._id%></td>
+                        <td class="border-0"><%=item.name%></td>
+                        <td class="border-0"><%=item.price%></td>
+                        <td class="border-0"><%=new Date(item.cdate).toLocaleString()%></td>
+                        <td class="border-0"><%=item.category.name%></td>
+                        <td class="border-0"><img src="data:image/jpg;base64,<%=item.image%>" width="100" height="100" /></td>
+                      </tr>
+                      <%  } %>
+                      <!-- pagination -->
+                      <tr>
+                        <td colspan="6">
+                          <%  for (var index = 1; index <= noPages; index++) {
+                                if (index == curPage) { %>
+                          | <b><%=index%></b> |
+                          <%    } else {  %>
+                          | <a href="./listproduct?page=<%=index%>"><%=index%></a> |
+                          <%    } } %>
+                        </td>
+                      </tr>
                   </thead>
                 </table>
               </div>
@@ -175,7 +181,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="card">
             <div class="card-block">
-              <h1 class="card-title text-center">Order Table</h1>
+              <h1 class="card-title text-center">Product Detail Table</h1>
               <div class="table-responsive">
                 <form method="POST" enctype="multipart/form-data">
                 <table class="table">
@@ -191,7 +197,7 @@
                     </tr>
                     <tr>
                       <td>Price</td>
-                      <td><input type="number" id="txtPrice" name="txtPrice" min="1" max="999" required />
+                      <td><input type="number" id="txtPrice" name="txtPrice" min="1" required />
                       </td>
                     </tr>
                     <tr>
