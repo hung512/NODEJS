@@ -58,9 +58,9 @@
           </div>
           <div class="col-lg-offset-4" >
             <%  if (session.customer) {  %>
-            Hello <b><%=session.customer.name%></b> | <a class="icons-btn logout" href="./logout">Logout</a>
+            Hello <b><%=session.customer.name%></b> | <a class="icons-btn logout" href="./logout">Logout</a> | <a href="./myprofile">My profile</a> | <a href="./myorders">My orders</a>
             <%  } else {  %>
-            <a class="icons-btn Login" href="./login">Login </a> | <a class="icon-btn signup" href="./signup">Sign up</a>
+            <a class="icons-btn Login" href="./login">Login </a> | <a class="icon-btn signup" href="./signup">Sign up</a> 
             <%  } %>
           </div>
           <div class="icons">
