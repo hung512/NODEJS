@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 
 <head>
   <link href="/css/styles.css" type="text/css" rel="stylesheet" />
@@ -61,4 +61,241 @@
   <%  } %>
 </body>
 
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MADEWELL SHOP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../myorder/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../myorder/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../myorder/css/magnific-popup.css">
+    <link rel="stylesheet" href="../myorder/css/jquery-ui.css">
+    <link rel="stylesheet" href="../myorder/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../myorder/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="../myorder/css/aos.css">
+
+    <link rel="stylesheet" href="../myorder/css/style.css">
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+    
+
+    <div class="site-navbar bg-white py-2 position-relative">
+
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>  
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="../myorder/index.html" class="js-logo-clone">MADEWELL</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li><a href="home">Home</a></li>
+                <li><a href="listproduct">LAPTOP</a></li>
+                <li><a href="listproduct">SMARTPHONE</a></li>
+                <li><a href="listproduct">ACCESSORIES</a></li>
+              </ul>
+          </div>
+          <div class="icons">
+            <a href="listproduct" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+            <a href="cart.html" class="icons-btn d-inline-block bag">
+              <span class="icon-shopping-bag"></span>
+              <span class="number">2</span>
+            </a>
+            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="../myorder/index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Order</strong></div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-block">
+                      <h1><strong class="card-title text-black">Order List</strong></h1>
+                      <h6><strong class="card-subtitle text-black"><p>Customer</p></strong></h6>
+                      <div class="table-responsive">
+                        <strong class="text-black">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                    <th>ID</th>
+                                    <th>Creation date</th>
+                                    <th>Cust.name</th>
+                                    <th>Cust.phone</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                  </tr>
+                                  <%  for (var item of orders) { %>
+                                    <tr class="datatable" onclick="window.location='./myorders?id=<%=item._id%>'">
+                                      <th><%=item._id%></th>
+                                      <td><%=new Date(item.cdate).toLocaleString()%></td>
+                                      <td><%=item.customer.name%></td>
+                                      <td><%=item.customer.phone%></td>
+                                      <td><%=item.total%></td>
+                                      <td><%=item.status%></td>
+                                    </tr>
+                                    <%  } %>
+                              </thead>
+                          </table>
+                        </strong>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%  if (order) { %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="card">
+                  <div class="card-block">
+                      <h1><strong class="card-title text-black">Order Bill</strong></h1>
+                      <h6><strong class="card-subtitle text-black"><p>Customer</p></strong></h6>
+                      <div class="table-responsive">
+                        <strong class="text-black">
+                          <table class="table">
+                      <thead>
+                          <tr>
+                            <th>No.</th>
+                            <th>Prod.ID</th>
+                            <th>Prod.name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                          </tr>
+                          <%  for (var [i, item] of order.items.entries()) {  %>
+                            <tr class="datatable">
+                              <td><%=(i+1)%></td>
+                              <td><%=item.product._id%></td>
+                              <td><%=item.product.name%></td>
+                              <td><img src="data:image/jpg;base64,<%=item.product.image%>" width="70" height="70" /></td>
+                              <td><%=item.product.price%></td>
+                              <td><%=item.quantity%></td>
+                              <td><%=item.product.price * item.quantity%></td>
+                            </tr>
+                            <%  } %>
+                          </table>
+                        </div>
+                        <%  } %>
+                      </thead>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+        </div>
+    <footer class="site-footer custom-border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+            
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">About Us</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates sed dolorum excepturi iure eaque, aut unde.</p>
+            </div>
+          </div>
+          <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
+            <div class="row">
+              <!-- <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Quick Links</h3>
+              </div> -->
+              <!-- <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">Sell online</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Shopping cart</a></li>
+                  <li><a href="#">Store builder</a></li>
+                </ul>
+              </div> -->
+              <!-- <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">Mobile commerce</a></li>
+                  <li><a href="#">Dropshipping</a></li>
+                  <li><a href="#">Website development</a></li>
+                </ul>
+              </div> -->
+              <!-- <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">Point of sale</a></li>
+                  <li><a href="#">Hardware</a></li>
+                  <li><a href="#">Software</a></li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
+                <li class="phone"><a href="../myorder/tel://23923929210">+2 392 3929 210</a></li>
+                <li class="email">emailaddress@domain.com</li>
+              </ul>
+            </div>
+
+            
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a class="text-primary">MADEWELL</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../myorder/js/jquery-3.3.1.min.js"></script>
+  <script src="../myorder/js/jquery-ui.js"></script>
+  <script src="../myorder/js/popper.min.js"></script>
+  <script src="../myorder/js/bootstrap.min.js"></script>
+  <script src="../myorder/js/owl.carousel.min.js"></script>
+  <script src="../myorder/js/jquery.magnific-popup.min.js"></script>
+  <script src="../myorder/js/aos.js"></script>
+
+  <script src="../myorder/js/main.js"></script>
+    
+  </body>
 </html>
