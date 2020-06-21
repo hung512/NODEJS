@@ -111,17 +111,6 @@
     </div>
     <div class="container">
     <table class="database">
-        <!-- <%  for (var prod of newprods) { %>
-          <th>
-            <div class="col-lg-6">
-              <figure>
-                <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
-                  <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-              </figure>
-            </div>
-          </th>
-          <%  } %> -->
-
           <%  for (var prod of hotprods) { %>
             <th>
               <div class="inline">
@@ -148,14 +137,6 @@
               <div class="product">
                 <a href="./details?id=<%=prod._id%>"><img src="data:image/jpg;base64,<%=prod.image%>" width="300px" height="300px" /></a>
                 <figcaption class="text-center"><%=prod.name%><br />Price: <%=prod.price%></figcaption>
-                <!-- <a href="#" class="item">
-                  <img src="../homeCust/images/redm.jpg" alt="Image" class="img-fluid">
-                  <div class="item-info">
-                    <h3>Red Magic 5G</h3>
-                    <span class="collection d-block">Summer Collection</span>
-                    <strong class="price">$9.50</strong>
-                  </div>
-                </a> -->
               </div>
               <%  } %>
             </div>
@@ -167,27 +148,25 @@
 
     <div class="site-blocks-cover inner-page py-5"  data-aos="fade">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 ml-auto order-lg-2 align-self-start">
-            <div class="site-block-cover-content">
-            <h2 class="sub-title">#New Summer Collection 2019</h2>
-            <h1>New Denim Coat</h1>
-            
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 align-self-end">
-            <img src="../homeCust/images/model_5.png" alt="Image" class="img-fluid">
+        <div class="row">
+          <div class="col-md-3 col-lg-6 mb-4 mb-lg-0">
+          <div class="block-7">
+            <strong class="text-uppercase"></strong>
+            <h3 class="footer-heading mb-4">MÔ TẢ</h3>
+            <p>MADEWELL cung cấp những sản phẩm tốt nhất với giá ưu đãi nhất khó nơi nào có thể làm được, với giá cả hợp lí, nhân viên tận tình bạn sẽ cảm thấy thoải mái khi chọn chúng tôi</p>
           </div>
         </div>
+        <div class="col-lg-5 ml-auto mb-10 mb-lg-0">
+          <div class="text-right">
+            <h3 class="footer-heading mb-4">Contact Info</h3>
+            <ul class="list-unstyled">
+              <li class="address">K24T-PM2</li>
+              <li class="phone"><a>0123456789</a></li>
+              <li class="email">VLU@vanlanguni.vn</li>
+            </ul>
+          </div>
       </div>
     </div>
-
-    <footer class="site-footer custom-border-top">
-      
-          
-        </div>
-      </div>
-    </footer>
   </div>
 
   <script src="../homeCust/js/jquery-3.3.1.min.js"></script>

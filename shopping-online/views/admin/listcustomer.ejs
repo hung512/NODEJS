@@ -1,75 +1,4 @@
-<!-- <html>
 
-<head>
-  <link href="/css/styles.css" type="text/css" rel="stylesheet" />
-</head>
-
-<body class="admin">
-  <%- include('./_menu.ejs') %>
-  <%  if (orders) { %>
-  <div class="align-center">
-    <h2 class="text-center">ORDER LIST</h2>
-    <table class="datatable" border="1">
-
-      <tr class="datatable">
-        <th>ID</th>
-        <th>Creation date</th>
-        <th>Cust.name</th>
-        <th>Cust.phone</th>
-        <th>Total</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-      <%  for (var item of orders) { %>
-      <tr class="datatable" onclick="window.location='./listorder?id=<%=item._id%>'">
-        <th><%=item._id%></th>
-        <td><%=new Date(item.cdate).toLocaleString()%></td>
-        <td><%=item.customer.name%></td>
-        <td><%=item.customer.phone%></td>
-        <td><%=item.total%></td>
-        <td><%=item.status%></td>
-        <td>
-          <%  if (item.status == 'PENDING') {  %>
-          <a href="./updatestatus?status=APPROVED&id=<%=item._id%>">APPROVE</a>
-          ||
-          <a href="./updatestatus?status=CANCELED&id=<%=item._id%>">CANCEL</a>
-          <%  } %>
-        </td>
-      </tr>
-      <%  } %>
-    </table>
-  </div>
-  <%  } %>
-  <%  if (order) { %>
-  <div class="align-center">
-    <h2 class="text-center">ORDER DETAIL</h2>
-    <table class="datatable" border="1">
-      <tr class="datatable">
-        <th>No.</th>
-        <th>Prod.ID</th>
-        <th>Prod.name</th>
-        <th>Image</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Amount</th>
-      </tr>
-      <%  for (var [i, item] of order.items.entries()) {  %>
-      <tr class="datatable">
-        <td><%=(i+1)%></td>
-        <td><%=item.product._id%></td>
-        <td><%=item.product.name%></td>
-        <td><img src="data:image/jpg;base64,<%=item.product.image%>" width="70" height="70" /></td>
-        <td><%=item.product.price%></td>
-        <td><%=item.quantity%></td>
-        <td><%=item.product.price * item.quantity%></td>
-      </tr>
-      <%  } %>
-    </table>
-  </div>
-  <%  } %>
-</body>
-
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,39 +19,19 @@
   <!-- You can change the theme colors from here -->
   <link href="../html/css/colors/blue.css" id="theme" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-  <!-- ============================================================== -->
-  <!-- Preloader - style you can find in spinners.css -->
-  <!-- ============================================================== -->
   <div class="preloader">
     <svg class="circular" viewBox="25 25 50 50">
       <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
   </div>
-  <!-- ============================================================== -->
-  <!-- Main wrapper - style you can find in pages.scss -->
-  <!-- ============================================================== -->
   <div id="main-wrapper">
-    <!-- ============================================================== -->
-    <!-- Topbar header - style you can find in pages.scss -->
-    <!-- ============================================================== -->
     <header class="topbar">
       <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
-        <!-- ============================================================== -->
-        <!-- Logo -->
-        <!-- ============================================================== -->
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">
             <!-- Logo icon --><b>
-              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-
-              <!-- Light Logo icon -->
               <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
             </b>
             <!--End Logo icon -->
@@ -150,12 +59,6 @@
           </div>
       </nav>
     </header>
-    <!-- ============================================================== -->
-    <!-- End Topbar header -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Left Sidebar - style you can find in sidebar.scss  -->
-    <!-- ============================================================== -->
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div class="scroll-sidebar">
@@ -307,12 +210,14 @@
     <!-- ============================================================== -->
   </div>
   <!-- ============================================================== -->
-  <footer class="footer">
-    © 2017 Material Pro Admin by NodeJS
-  </footer>
-  <!-- ============================================================== -->
-  <!-- End footer -->
-  <!-- ============================================================== -->
+  <div class="row pt-5 mt-5 text-center">
+    <div class="col-md-12">
+      <p>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a class="text-primary">MADEWELL</a>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+    </div> 
   </div>
   <!-- All Jquery -->
   <!-- ============================================================== -->
